@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marks Predictor</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="stripes"></div>
+    <div class="content">
+        <h1 id="academystique">ACADEMYSTIQUE</h1>
+        <form method="POST" action="/predict" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="name">Student Name</label>
+                <input type="text" id="name" name="a" placeholder="Enter your name">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="sem3">Sem 3</label>
+                    <input type="text" id="sem3" name="b" placeholder="Enter sem 3 CGPA">
+                </div>
+                <div class="form-group">
+                    <label for="sem4">Sem 4</label>
+                    <input type="text" id="sem4" name="c" placeholder="Enter sem 4 CGPA">
+                </div>
+                <div class="form-group">
+                    <label for="sem5">Sem 5</label>
+                    <input type="text" id="sem5" name="d" placeholder="Enter sem 5 CGPA">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="studyTime">Study Time</label>
+                    <input type="text" id="studyTime" name="f" placeholder="Enter Study hours..">
+                </div>
+                <div class="form-group">
+                    <label for="iq">IQ</label>
+                    <input type="text" id="iq" name="j" placeholder="Enter IQ of the student">
+                </div>
+                <div class="form-group">
+                    <label for="backLogs">Back Logs</label>
+                    <input type="text" id="backLogs" name="g" placeholder="Enter backlogs if any">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="travelHours">Travel Hours</label>
+                    <input type="text" id="travelHour" name="e" placeholder="Total time you spend daily travelling">
+                </div>
+                <div class="form-group">
+                    <label for="freeTime">Free Time</label>
+                    <input type="text" id="freeTime" name="h" placeholder="Amount of free time">
+                </div>
+                <div class="form-group full-width">
+                    <label for="outdoorActivities">Outdoor Activities</label>
+                    <input type="text" id="outdoorActivities" name="i" placeholder="Outdoor activities ~ hobbies,etc..">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <label for="dailyActivities">Daily Activities</label>
+                    <input type="text" id="dailyActivities" name="k" placeholder="Time taken by daily chores">
+                </div>
+            </div>
+
+            <button type="submit">Predict Marks</button>
+            <input type="button" value="Clear" onclick="clearResult()">
+        </form>
+        <br>
+        <div id="prediction-result">
+            {{ abcc }}
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var inputs = document.getElementsByTagName('input');
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type === 'text' && inputs[i].value === '') {
+                    alert('Please fill in all the fields before submitting.');
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function clearResult() {
+            document.getElementById('prediction-result').innerText = '';
+            document.getElementsByName('a')[0].value = '';
+            document.getElementsByName('b')[0].value = '';
+            document.getElementsByName('c')[0].value = '';
+            document.getElementsByName('d')[0].value = '';
+            document.getElementsByName('e')[0].value = '';
+            document.getElementsByName('f')[0].value = '';
+            document.getElementsByName('g')[0].value = '';
+            document.getElementsByName('h')[0].value = '';
+            document.getElementsByName('i')[0].value = '';
+            document.getElementsByName('j')[0].value = '';
+            document.getElementsByName('k')[0].value = '';
+        }
+    </script>
+</body>
+</html>
