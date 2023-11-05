@@ -1,17 +1,60 @@
-<h1> Academystique - Stage 1: Student marks prediction model:</h1> <hr>
-<h3>Our project aims to build a web portal to help students improve their academic results based off previous marks, how analyze time spent on different daily chores throughout the day can affect on their scores and guide them with helpful tips. <br><br> Website can be helpful for both students and teachers to understand the weak areas and gradually work on it to improve them</h3><hr>
-<h3>Modules required: </h3> 
-<h4>flask <br>
-scikit-learn<br>
-RandomForestRegressor<br>
-train_test_split<br>
-OneHotEncoder<br>
-SimpleImputer<br>
-warnings<br>
-pickle<br><br><hr>
+# Academystique - Stage 1: Student Marks Prediction Model
 
-**How to run file:**<br>
-1) Update csv path for "ml_model" to directory based off where its stored on your machine<br>
-2) Run ml_model. file to generate necessary pkl files<br>
-3) Run app and open local server to see the predicition webpage<br>
-</h4>
+
+
+Welcome to the Academystique Stage 1 project repository! This project is designed to build a web portal that empowers students to improve their academic results by analyzing their past marks and understanding how daily chores affect their scores. This platform will offer valuable insights and guidance to both students and teachers, helping them identify weak areas and work on improving them.
+
+## Modules Required
+
+Before you get started, make sure you have the following Python modules installed:
+
+- Flask
+- scikit-learn
+- RandomForestRegressor
+- train_test_split
+- OneHotEncoder
+- SimpleImputer
+- warnings
+- pickle
+
+You can install these modules using `pip`:
+
+```bash
+pip install flask scikit-learn
+```
+
+## Getting Started
+
+Follow these steps to run the project on your local machine:
+
+1. **Update CSV Path**:
+   - In the `ml_model.py` file, update the path to the CSV data file to point to the location where you have stored the dataset on your machine.
+
+2. **Generate Necessary .pkl Files**:
+   - Run the `ml_model.py` file. This will generate the necessary .pkl files used by the prediction model.
+
+3. **Run the Web Application**:
+   - Execute the web application by running the `app.py` file.
+   - Open a web browser and navigate to the local server (usually `http://localhost:5000`) to access the prediction webpage.
+
+## Features
+
+- Analyze past academic marks.
+- Visualize the impact of daily chores on academic performance.
+- Receive personalized tips and recommendations for improvement.
+- Suitable for both students and teachers.
+
+## Contributing
+
+We welcome contributions to make this project even better. Feel free to submit issues, feature requests, or pull requests. Let's collaborate to enhance the Academystique platform!
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+---
+
+
+
+
+
