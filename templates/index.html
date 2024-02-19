@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <nav>
+        <div class="container1" id="home">
+            <img src="{{ url_for('static', filename='image 2.png') }}" alt="logo">
+            <ul>
+                <li><a href="#home" >Home</a></li>
+                <li><a href="#how" >Explore</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#abt">Contact</a></li>
+                <li><a href="#abt">About Us</a></li>
+
+            </ul>
+            
+            <button class="btn1">Login</button>
+        </div>
+    </nav>
+
+    <section class="sec1">
+        <div class="lft">
+            <h3>Unleash Your Academic Potential...</h3>
+            <p>Imagine predicting your marks & improvising for
+                <strong style="color:#6677F7;"> BETTER RESULTS BEFOREHAND!</strong>
+            </p>
+            <p>Sounds <span class="span1"> implausible right?</span> </p>
+            <div class="wrapper1">
+                <a href="{{ url_for('form_page') }}">
+                    <button class="btn2">ENCHANT</button>
+                </a>
+                <div class="wrap">
+                    <a href="#how">Learn More </a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                        <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
+                    </svg>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="ryt">
+            <img src="{{ url_for('static', filename='image 4.png') }}" alt="">
+        </div>
+    </section>
+
+
+
+    <section class="sec2" id="how">
+        <h3 >How it works?</h3>
+        <div class="wrapper2">
+            <div class="box1">
+                <img src="https://images.gregmat.com/media/misc/Group_4.png" alt="">
+                <p>Enter your academic performance from past semester exams, and our ML model will conduct a comprehensive analysis. It considers various factors asked during evaluation, such as IQ, free time, study hours, backlogs, and more.
+
+                    
+                    
+                    </p>
+            </div>
+            <div class="box2">
+                <p>Recognizing where to invest time is pivotal for effective planning. This awareness fosters an understanding of the importance of strategic time management, enhancing academic performance. Pinpointing specific areas for improvement tailors study sessions, optimizing efforts and leading to improved comprehension and higher scores. </p>
+                <img src="https://images.gregmat.com/media/misc/Group_5.png" alt="">
+            </div>
+            <div class="box3">
+                <img src="https://images.gregmat.com/media/misc/Group_6.png" alt="">
+                <p>Students receive personalized guidance and access to top-tier resources on content-related media platforms like YouTube, aiding them in studying more effectively for areas of weakness. This provides valuable insights, ultimately improving academic performance.  </p>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="sec3">
+
+        <h3 id="tools" >Toolset</h3>
+        <div class="wrapper3">
+            <div class="box4">
+                <img src="{{ url_for('static', filename='image 6.png') }}" alt="">
+                <h4>Marks Predictor</h4>
+                <p>Based on various factors future marks of students can be evaluated, highlighting weakness and guiding resources which help them for scoring better in upcoming exams </p>
+                <a href="{{ url_for('form_page') }}">Check it out</a>
+            </div>
+            <div class="box5"><img src="{{ url_for('static', filename='image 8.png') }}" alt="">
+                <h4>DMIT</h4>
+                <p>Dermatoglyphics Multiple Intelligence test (DMIT) is a truly scientific study of the fingerprint patterns. This helps in understanding a great individual's potential and personality type </p>
+                <a href="#">Coming Soon!</a>
+            </div>
+            <div class="box6"><img src="{{ url_for('static', filename='image 10.png') }}" alt="">
+                <h4>Resources</h4>
+                <p>Best academic related resources including media content, ALL at one place to help you to improve faster than ever so you spend time learning and not searching at last minute</p>
+                <a href="{{ url_for('form_page') }}">Check it out</a>
+            </div>
+        </div>
+
+        </div>
+    </section>
+    <section class="sec4" id="abt">
+        <div class="left" >
+            <h4 style="font-size: 2.5em; text-align: center;">About Us</h4>
+            <p style="font-size: 2em; color:#002BAE ;font-weight: 600; text-align: center;">Welcome to Academystique</p>
+            <p style="font-size: 1.3em;">At Academystique, we are passionate about revolutionizing education through the
+                power of artificial intelligence. Our journey began with a shared belief that every student deserves the
+                opportunity to thrive academically, and technology can play a pivotal role in making this vision a
+                reality.</p>
+            <p style="font-size: 1.6em; color:#002BAE;"><strong>Our Mission</strong></p>
+            <p style="font-size: 1.3em;"><em>Empowering Educators, Transforming Lives</em></p>
+            <p style="font-size: 1.3em;">Our mission is to empower educators with cutting-edge AI solutions that go
+                beyond traditional approaches. We understand the challenges faced in predicting student performance and
+                are dedicated to creating innovative tools that foster a more personalized and effective learning
+                environment.</p>
+            <!-- <p style="font-size: 1.6em;"><strong>The impact we strive for</strong></p>
+    <ul style="font-size: 1.3em;">
+        <li>Early Intervention: We believe in the power of early intervention. Our Student Marks Prediction AI model is designed to identify students at risk, enabling timely support and interventions that can change the trajectory of their academic journey.</li>
+        <li>Personalized Learning: One size does not fit all. Our model helps educators tailor learning experiences based on individual student needs, fostering a more engaging and effective educational process.</li>
+        <li>Efficiency in Education: We aim to streamline administrative tasks, allowing educators to focus on what matters most—inspiring and guiding the next generation of learners.</li>
+    </ul> -->
+            <p style="font-size: 1.6em; color:#002BAE;"><Strong>Join us on the Journey</Strong></p>
+            <p style="font-size: 1.3em;">We invite you to join us on this transformative journey. Whether you're an
+                educator looking to enhance your teaching methods or an institution aiming to embrace the future of
+                education, Academystique is here to support you.</p>
+            <p style="font-size: 1.3em;">Together, let's redefine education through innovation, ethics, and a commitment
+                to student success.</p>
+            <p style="font-size: 1.3em;color:#002BAE;"><em>Empower. Transform. Thrive.</em></p>
+            <p style="font-size: 1.3em;">- Academystique Team</p>
+        </div>
+        <div class="right">
+            <h4 style="font-size: 2.5em;">Contact Us</h4>
+
+            <div class="formbold-main-wrapper">
+                <div class="formbold-form-wrapper">
+                    <form action="https://formbold.com/s/FORM_ID" method="POST">
+                        <div class="formbold-input-flex">
+                            <div>
+                                <input type="text" name="firstname" id="firstname" placeholder="Jane"
+                                    class="formbold-form-input" />
+                                <label for="firstname" class="formbold-form-label"> First name </label>
+                            </div>
+                            <div>
+                                <input type="text" name="lastname" id="lastname" placeholder="Cooper"
+                                    class="formbold-form-input" />
+                                <label for="lastname" class="formbold-form-label"> Last name </label>
+                            </div>
+                        </div>
+
+                        <div class="formbold-input-flex">
+                            <div>
+                                <input type="email" name="email" id="email" placeholder="jhon@mail.com"
+                                    class="formbold-form-input" />
+                                <label for="email" class="formbold-form-label"> Mail </label>
+                            </div>
+                            <div>
+                                <input type="text" name="phone" id="phone" placeholder="(319) 555-0115"
+                                    class="formbold-form-input" />
+                                <label for="phone" class="formbold-form-label"> Phone </label>
+                            </div>
+                        </div>
+
+                        <div class="formbold-textarea">
+                            <textarea rows="6" name="message" id="message" placeholder="Write your message..."
+                                class="formbold-form-input"></textarea>
+                            <label for="message" class="formbold-form-label"> Message </label>
+                        </div>
+
+                        <div class="formbold-input-file">
+                            <div class="formbold-filename-wrapper">
+                                <!-- <span class="formbold-filename">
+                        website-information-architecture.pdf
+          
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1670_1541)">
+                        <path d="M9.00005 7.93906L12.7126 4.22656L13.7731 5.28706L10.0606 8.99956L13.7731 12.7121L12.7126 13.7726L9.00005 10.0601L5.28755 13.7726L4.22705 12.7121L7.93955 8.99956L4.22705 5.28706L5.28755 4.22656L9.00005 7.93906Z" fill="#536387"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1670_1541">
+                        <rect width="18" height="18" fill="white"/>
+                        </clipPath>
+                        </defs>
+                        </svg>
+                      </span> -->
+
+                                <!-- <span class="formbold-filename">
+                        website-logo.png
+          
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1670_1541)">
+                        <path d="M9.00005 7.93906L12.7126 4.22656L13.7731 5.28706L10.0606 8.99956L13.7731 12.7121L12.7126 13.7726L9.00005 10.0601L5.28755 13.7726L4.22705 12.7121L7.93955 8.99956L4.22705 5.28706L5.28755 4.22656L9.00005 7.93906Z" fill="#536387"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1670_1541">
+                        <rect width="18" height="18" fill="white"/>
+                        </clipPath>
+                        </defs>
+                        </svg>
+                      </span> -->
+                            </div>
+                            <label for="upload" class="formbold-input-label">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1670_1531)">
+                                        <path
+                                            d="M12.3568 6.4644L7.64349 11.1786C7.5639 11.2554 7.50041 11.3474 7.45674 11.4491C7.41307 11.5507 7.39008 11.6601 7.38912 11.7707C7.38815 11.8814 7.40924 11.9911 7.45114 12.0935C7.49304 12.1959 7.55492 12.289 7.63316 12.3672C7.71141 12.4455 7.80445 12.5073 7.90686 12.5492C8.00928 12.5912 8.11901 12.6122 8.22966 12.6113C8.34031 12.6103 8.44966 12.5873 8.55133 12.5436C8.653 12.5 8.74495 12.4365 8.82182 12.3569L13.536 7.64356C14.0049 7.17468 14.2683 6.53875 14.2683 5.87565C14.2683 5.21255 14.0049 4.57661 13.536 4.10773C13.0671 3.63885 12.4312 3.37544 11.7681 3.37544C11.105 3.37544 10.469 3.63885 10.0002 4.10773L5.28599 8.8219C4.89105 9.20701 4.57652 9.6667 4.36062 10.1743C4.14473 10.6819 4.03178 11.2274 4.02832 11.779C4.02487 12.3306 4.13097 12.8774 4.34049 13.3877C4.55 13.8979 4.85876 14.3615 5.24884 14.7516C5.63892 15.1416 6.10256 15.4503 6.61287 15.6597C7.12318 15.8692 7.67 15.9752 8.2216 15.9717C8.77321 15.9681 9.31862 15.8551 9.82621 15.6391C10.3338 15.4232 10.7934 15.1086 11.1785 14.7136L15.8927 10.0002L17.071 11.1786L12.3568 15.8927C11.8151 16.4344 11.172 16.8641 10.4643 17.1573C9.75649 17.4505 8.99791 17.6014 8.23182 17.6014C7.46574 17.6014 6.70716 17.4505 5.99939 17.1573C5.29162 16.8641 4.64853 16.4344 4.10682 15.8927C3.56512 15.351 3.13542 14.7079 2.84225 14.0002C2.54908 13.2924 2.39819 12.5338 2.39819 11.7677C2.39819 11.0016 2.54908 10.2431 2.84225 9.5353C3.13542 8.82753 3.56512 8.18443 4.10682 7.64273L8.82182 2.9294C9.60767 2.17041 10.6602 1.75043 11.7527 1.75992C12.8451 1.76942 13.8902 2.20762 14.6627 2.98015C15.4353 3.75269 15.8735 4.79774 15.883 5.89023C15.8925 6.98271 15.4725 8.03522 14.7135 8.82106L10.0002 13.5369C9.76794 13.7691 9.49226 13.9532 9.18887 14.0788C8.88548 14.2045 8.56032 14.2691 8.23195 14.2691C7.90357 14.269 7.57843 14.2043 7.27507 14.0786C6.97171 13.9529 6.69607 13.7687 6.46391 13.5365C6.23174 13.3043 6.04759 13.0286 5.92196 12.7252C5.79633 12.4218 5.7317 12.0966 5.73173 11.7683C5.73177 11.4399 5.79649 11.1148 5.92219 10.8114C6.04788 10.508 6.2321 10.2324 6.46432 10.0002L11.1785 5.28606L12.3568 6.4644Z"
+                                            fill="#07074D" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1670_1531">
+                                            <rect width="20" height="20" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                Attach files
+                                <input type="file" name="upload" id="upload">
+                            </label>
+                        </div>
+
+                        <button class="formbold-btn">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="wrap5">
+                 <img src="{{ url_for('static', filename='image 12.png') }}" alt="">
+                 <img src="{{ url_for('static', filename='image 2.png') }}" alt="">
+                </div>
+
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

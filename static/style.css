@@ -1,21 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Lexend", sans-serif;
+  padding: 50px;
+}
+
+body {
+  background-color: #E0E6E2;
+
+  gap: 100px;
+
+  min-width: 100vh;
+}
+.wrapper3{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 150px;
+}
+.one{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.5em;
+ list-style:square;
+
+  
+}
+.two{
+  width: 250px;
+}
+nav{
+  width: 50%;
+}
+.container1{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 100px;
+}
+.container1 > img{
+  width: 300px;
+}
+nav ul{
+  display: flex;
+  gap: 20px;
 }
 
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -29,7 +80,18 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 500px;
 }
+.container1 > ul {
+  list-style: none;
 
+  gap: 50px;
+  font-size: 1.3em;
+  font-weight: 500;
+  padding: 0px 60px;
+}
+
+.img1{
+  width: 100px;
+}
 form {
   margin-top: 20px;
 }
@@ -58,7 +120,7 @@ form input[type="text"] {
 form .form-row {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
 }
 
 form .form-row .form-group {
@@ -78,14 +140,14 @@ form .form-row .form-group.full-width:last-child {
 
 form .form-row .form-group:nth-child(9) {
   margin-right: 10px;
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
 }
 
 
 form .form-row .form-group:nth-child(10) {
   flex: 1 1 calc(100% - 10px);
   margin: 0 5px;
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
 }
 
 form button[type="submit"],
@@ -109,4 +171,133 @@ form input[type="button"]:hover {
   font-size: 25px;
   color: #555;
   margin-top: 10px;
+}
+
+.img1{
+  width: 200px;
+}
+
+.wrapper8{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.wrapper9{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#tips-list{
+  
+  font-size: 0.8em;
+  display: flex;
+  flex-direction: column;
+}
+
+select{
+  padding: 5px;
+  font-weight: 700;
+}
+
+select:hover option:hover {
+  background-color: #ddd;
+}
+select option {
+  transition: background-color 0.3s;
+}
+select {
+  transition: height 0.3s ease;
+  overflow: hidden;
+  height: 30px; /* Set an initial height */
+}
+
+/* Change the height on hover to reveal the options */
+select:hover {
+  height: auto;
+}
+
+.wrapper8 p{
+  font-size: 0.8em;
+  font-weight: 400;
+}
+
+.sidebar {
+  width: 20px;
+  height: 100vh;
+  background: linear-gradient(-45deg, #0ecdb0, #0dafe0, #1273bd, #0f12cd);
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  transition: width 1s ease, background-position 1s ease;; /* Added transition property for smoother animation */
+  cursor: pointer; /* Add a pointer cursor to indicate interactivity */
+  justify-content: space-evenly;
+  animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.sidebar::before {
+  content: ">";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  font-size: 100px; /* Increased font size for the indicator */
+  color: rgb(1, 23, 102);
+  transition: color 0.5s ease;
+}
+
+.sidebar:hover {
+  width: 200px;
+  color: white;
+  overflow: hidden;
+}
+
+.sidebar:hover::before {
+  color: blue; /* Change the indicator color on hover */
+  opacity: 0;
+}
+
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  margin: 0; /* Remove default margin to avoid extra spacing */
+  padding: 20px; /* Add padding for better aesthetics */
+  opacity: 0; /* Set initial opacity to 0 */
+  transition: opacity 0.5s ease; 
+  list-style: none;
+}
+
+.sidebar:hover ul {
+  opacity: 1; /* Make the links visible on hover */
+}
+
+.sidebar a {
+  text-decoration: none;
+ 
+  color: inherit; /* Inherit color to avoid explicit white color */
+  transition: color 0.5s ease; /* Smooth transition for text color */
+}
+
+.sidebar:hover a {
+  color: white;
+}
+
+
+.btn2:hover {
+  cursor: pointer;
 }

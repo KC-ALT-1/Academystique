@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Marks Predictor</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="{{ url_for('main') }}">Return Home</a></li>
+            <li><a href="{{ url_for('main') }}">Check Resources</a></li>
+        </ul>
+    </div>
+    <nav>
+        <div class="container1" id="home">
+            <div class="wrapper3">
+                <img class="two" src="{{ url_for('static', filename='image 2.png') }}" alt="logo">
+                <ul class="one">
+                    <li>Input values</li>
+                    <li>Analyze Weakness</li>
+                    <li>Improve Scores</li>
+                </ul>
+            </div>
+            <ul class="three">
+                <li><img class="img1" src="{{ url_for('static', filename='image 14.png') }}" alt="wizard"></li>
+                <li>
+                    <div class="wrapper8">
+                        <div id="prediction-result">
+                            {% if abcc is defined %}
+
+                            {% if abcc == "Fail: All semesters' GPA are 0." %}
+                            <p >Tip: Make sure to focus on your studies and improve your GPA in
+                                upcoming semesters.</p>
+                            {% elif abcc == "Drop: Backlogs greater than 5." %}
+                            <p >Tip: Work on clearing your backlogs to improve your academic
+                                standing.</p>
+                            {% elif abcc == "Expected Pointer less than 4: IQ less than 40." %}
+                            <p >Tip: Consider improving your study habits and exploring
+                                activities
+                                to enhance your IQ.</p>
+                            {% elif abcc.startswith("Predicted GPA") %}
+                            <p >Keep up the good work and maintain a balanced approach to your
+                                studies and activities.</p>
+                            {% endif %}
+                            {% endif %}
+                        </div>
+                        <div class="wrapper9">
+                            <label for="subject" style="font-size: 0.9em; ">Select Subject:</label>
+                            <select id="subject" style="font-size: 0.7em; " size="1" name="subject" onchange="fetchTips()"
+                                onmouseenter="expandSelect()" onmouseleave="collapseSelect() ">
+                                <option value="NLP">Natural Language Processing</option>
+                                <option value="ML">Machine Learning</option>
+                                <option value="BigData">Big Data Analysis</option>
+                            </select>
+                            <ul id="tips-list"></ul>
+                        </div>
+                    </div>
+                </li>
+                <!-- <li><a href="#home" >Go back to homepage</a></li>
+                <li><a href="#how" >Explore Resources</a></li> -->
+
+            </ul>
+
+
+        </div>
+    </nav>
+    <div class="content">
+        <h1 id="academystique">ACADEMYSTIQUE</h1>
+        <form method="POST" action="{{ url_for('home') }}" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="name">Student Name</label>
+                <input type="text" id="name" name="a" placeholder="Enter your name">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="sem3">Sem 3</label>
+                    <input type="text" id="sem3" name="b" placeholder="Enter sem 3 CGPA">
+                </div>
+                <div class="form-group">
+                    <label for="sem4">Sem 4</label>
+                    <input type="text" id="sem4" name="c" placeholder="Enter sem 4 CGPA">
+                </div>
+                <div class="form-group">
+                    <label for="sem5">Sem 5</label>
+                    <input type="text" id="sem5" name="d" placeholder="Enter sem 5 CGPA">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="studyTime">Study Time</label>
+                    <input type="text" id="studyTime" name="f" placeholder="Enter Study hours..">
+                </div>
+                <div class="form-group">
+                    <label for="iq">IQ</label>
+                    <input type="text" id="iq" name="j" placeholder="Enter IQ of the student">
+                </div>
+                <div class="form-group">
+                    <label for="backLogs">Back Logs</label>
+                    <input type="text" id="backLogs" name="g" placeholder="Enter backlogs if any">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="travelHours">Travel Hours</label>
+                    <input type="text" id="travelHour" name="e" placeholder="Total time you spend daily travelling">
+                </div>
+                <div class="form-group">
+                    <label for="freeTime">Free Time</label>
+                    <input type="text" id="freeTime" name="h" placeholder="Amount of free time">
+                </div>
+                <div class="form-group full-width">
+                    <label for="outdoorActivities">Outdoor Activities</label>
+                    <input type="text" id="outdoorActivities" name="i" placeholder="Outdoor activities ~ hobbies,etc..">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <label for="dailyActivities">Daily Activities</label>
+                    <input type="text" id="dailyActivities" name="k" placeholder="Time taken by daily chores">
+                </div>
+            </div>
+
+            <button type="submit">Predict Marks</button>
+            <input type="button" value="Clear" onclick="clearResult();">
+        </form>
+        <br>
+        <div id="abcc">
+            {{ abcc }}
+        </div>
+    </div>
+
+    <script>
+        var selectElement = document.getElementById('subject');
+
+        selectElement.addEventListener('mouseenter', function () {
+            selectElement.size = selectElement.options.length;
+        });
+
+        selectElement.addEventListener('mouseleave', function () {
+            selectElement.size = 1;
+        });
+
+        selectElement.addEventListener('change', function () {
+            selectElement.blur();
+        });
+        function expandSelect() {
+            var selectElement = document.getElementById('subject');
+            selectElement.size = selectElement.options.length;
+        }
+
+        function collapseSelect() {
+            var selectElement = document.getElementById('subject');
+            selectElement.size = 1;
+            selectElement.blur();
+        }
+        function validateForm() {
+            var inputs = document.getElementsByTagName('input');
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type === 'text' && inputs[i].value === '') {
+                    alert('Please fill in all the fields before submitting.');
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function clearResult() {
+            // Clear the result
+            var predictionResult = document.getElementById('prediction-result');
+            if (predictionResult) {
+                predictionResult.innerText = '';
+            }
+
+            // Clear the form fields
+            var inputNames = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'];
+            inputNames.forEach(function (name) {
+                var inputField = document.getElementsByName(name)[0];
+                if (inputField) {
+                    inputField.value = '';
+                }
+            });
+
+            // Clear the tips list
+            var tipsList = document.getElementById('tips-list');
+            if (tipsList) {
+                tipsList.innerHTML = '';
+            }
+
+            // Update the abcc value to an empty string
+            var abccElement = document.getElementById('abcc');
+            if (abccElement) {
+                abccElement.innerText = '';
+            }
+        }
+
+
+        function displayTips(tips) {
+            var tipsList = document.getElementById("tips-list");
+
+            // Display tips
+            tips.forEach(function (tip) {
+                var li = document.createElement("li");
+                li.textContent = tip;
+                tipsList.appendChild(li);
+            });
+        }
+
+        function fetchTips() {
+            var subject = document.getElementById("subject").value;
+
+            var tipsList = document.getElementById("tips-list");
+
+            // Clear previous tips
+            tipsList.innerHTML = "";
+
+            // Fetch tips from the server
+            fetch(`/get_tips?subject=${subject}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch tips');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    displayTips(data.tips);
+                })
+                .catch(error => {
+                    console.error('Error fetching tips:', error);
+                    // Display a default message or handle the error in a way suitable for your application
+                    var li = document.createElement("li");
+                    li.textContent = "Failed to fetch tips. Please try again later.";
+                    tipsList.appendChild(li);
+                });
+        }
+    </script>
+</body>
+
+</html>
