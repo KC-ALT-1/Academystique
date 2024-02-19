@@ -32,25 +32,26 @@
                             {% if abcc is defined %}
 
                             {% if abcc == "Fail: All semesters' GPA are 0." %}
-                            <p >Tip: Make sure to focus on your studies and improve your GPA in
+                            <p>Make sure to focus on your studies and improve your GPA in
                                 upcoming semesters.</p>
                             {% elif abcc == "Drop: Backlogs greater than 5." %}
-                            <p >Tip: Work on clearing your backlogs to improve your academic
+                            <p> Work on clearing your backlogs to improve your academic
                                 standing.</p>
                             {% elif abcc == "Expected Pointer less than 4: IQ less than 40." %}
-                            <p >Tip: Consider improving your study habits and exploring
+                            <p>Consider improving your study habits and exploring
                                 activities
-                                to enhance your IQ.</p>
+                                to enhance your IQ. Take IQ test here <a href="https://www.123test.com/iq-test/"></a>
+                            </p>
                             {% elif abcc.startswith("Predicted GPA") %}
-                            <p >Keep up the good work and maintain a balanced approach to your
+                            <p>Keep up the good work and maintain a balanced approach to your
                                 studies and activities.</p>
                             {% endif %}
                             {% endif %}
                         </div>
                         <div class="wrapper9">
                             <label for="subject" style="font-size: 0.9em; ">Select Subject:</label>
-                            <select id="subject" style="font-size: 0.7em; " size="1" name="subject" onchange="fetchTips()"
-                                onmouseenter="expandSelect()" onmouseleave="collapseSelect() ">
+                            <select id="subject" style="font-size: 0.7em; " size="1" name="subject"
+                                onchange="fetchTips()" onmouseenter="expandSelect()" onmouseleave="collapseSelect() ">
                                 <option value="NLP">Natural Language Processing</option>
                                 <option value="ML">Machine Learning</option>
                                 <option value="BigData">Big Data Analysis</option>
@@ -59,8 +60,7 @@
                         </div>
                     </div>
                 </li>
-                <!-- <li><a href="#home" >Go back to homepage</a></li>
-                <li><a href="#how" >Explore Resources</a></li> -->
+
 
             </ul>
 
@@ -168,13 +168,13 @@
         }
 
         function clearResult() {
-            // Clear the result
+          
             var predictionResult = document.getElementById('prediction-result');
             if (predictionResult) {
                 predictionResult.innerText = '';
             }
 
-            // Clear the form fields
+           
             var inputNames = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'];
             inputNames.forEach(function (name) {
                 var inputField = document.getElementsByName(name)[0];
@@ -183,13 +183,13 @@
                 }
             });
 
-            // Clear the tips list
+          
             var tipsList = document.getElementById('tips-list');
             if (tipsList) {
                 tipsList.innerHTML = '';
             }
 
-            // Update the abcc value to an empty string
+          
             var abccElement = document.getElementById('abcc');
             if (abccElement) {
                 abccElement.innerText = '';
@@ -213,10 +213,9 @@
 
             var tipsList = document.getElementById("tips-list");
 
-            // Clear previous tips
             tipsList.innerHTML = "";
 
-            // Fetch tips from the server
+
             fetch(`/get_tips?subject=${subject}`)
                 .then(response => {
                     if (!response.ok) {
@@ -229,7 +228,7 @@
                 })
                 .catch(error => {
                     console.error('Error fetching tips:', error);
-                    // Display a default message or handle the error in a way suitable for your application
+
                     var li = document.createElement("li");
                     li.textContent = "Failed to fetch tips. Please try again later.";
                     tipsList.appendChild(li);

@@ -208,10 +208,10 @@ select option {
 select {
   transition: height 0.3s ease;
   overflow: hidden;
-  height: 30px; /* Set an initial height */
+  height: 30px; 
 }
 
-/* Change the height on hover to reveal the options */
+
 select:hover {
   height: auto;
 }
@@ -230,8 +230,8 @@ select:hover {
   display: flex;
   flex-direction: column;
   overflow: visible;
-  transition: width 1s ease, background-position 1s ease;; /* Added transition property for smoother animation */
-  cursor: pointer; /* Add a pointer cursor to indicate interactivity */
+  transition: width 1s ease, background-position 1s ease;
+  cursor: pointer; 
   justify-content: space-evenly;
   animation: gradient 15s ease infinite;
 }
@@ -255,7 +255,7 @@ select:hover {
   top: 50%;
   left: 100%;
   transform: translate(-50%, -50%);
-  font-size: 100px; /* Increased font size for the indicator */
+  font-size: 100px; 
   color: rgb(1, 23, 102);
   transition: color 0.5s ease;
 }
@@ -267,7 +267,7 @@ select:hover {
 }
 
 .sidebar:hover::before {
-  color: blue; /* Change the indicator color on hover */
+  color: blue; 
   opacity: 0;
 }
 
@@ -275,22 +275,22 @@ select:hover {
   display: flex;
   flex-direction: column;
   gap: 100px;
-  margin: 0; /* Remove default margin to avoid extra spacing */
-  padding: 20px; /* Add padding for better aesthetics */
-  opacity: 0; /* Set initial opacity to 0 */
+  margin: 0; 
+  padding: 20px; 
+  opacity: 0; 
   transition: opacity 0.5s ease; 
   list-style: none;
 }
 
 .sidebar:hover ul {
-  opacity: 1; /* Make the links visible on hover */
+  opacity: 1; /
 }
 
 .sidebar a {
   text-decoration: none;
  
-  color: inherit; /* Inherit color to avoid explicit white color */
-  transition: color 0.5s ease; /* Smooth transition for text color */
+  color: inherit; 
+  transition: color 0.5s ease; 
 }
 
 .sidebar:hover a {
